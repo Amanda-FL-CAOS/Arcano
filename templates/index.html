@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Arcano</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/global.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav>
+
+        <h1>Arcano</h1>
+
+        <h2>
+            Descubra seu arcano pessoal
+        </h2>
+
+    </nav>
+
+    <!-- conteúdo -->
+    <section>
+
+        <!-- formulário -->
+        <form method="POST">
+
+            <label for="birthdate">
+                Coloque aqui sua data de nascimento:
+            </label>
+
+            <input
+                type="date"
+                id="birthdate"
+                name="birthdate"
+                required>
+
+            <button type="submit">
+                Descobrir Arcano
+            </button>
+
+        </form>
+
+        <!-- resultado -->
+        {% if resultado %}
+
+        <div class="resultado">
+
+            <h2>Resultado</h2>
+
+            <p>
+                Soma Total:
+                {{ resultado.soma }}
+            </p>
+
+            <p>
+                Arcano Principal:
+                {{ resultado.arcano_principal }}
+            </p>
+
+            <p>
+                Arcano Reduzido:
+                {{ resultado.arcano_reduzido }}
+                ({{ resultado.numero_reduzido }})
+            </p>
+
+        </div>
+
+        {% endif %}
+
+        <!-- explicação -->
+        <div class="sobre">
+
+            <h3>Sobre o Arcano Pessoal</h3>
+
+            <p>
+                O arcano pessoal é calculado através
+                da soma dos números da data de nascimento.
+            </p>
+
+            <p>
+                Se o resultado ultrapassar 21,
+                o sistema reduz o número até encontrar
+                um arcano válido.
+            </p>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

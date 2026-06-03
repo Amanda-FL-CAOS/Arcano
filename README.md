@@ -1,10 +1,11 @@
-descrição do projeto:
+# descrição do projeto:
 
 - o sistema precisa somar os numeros da data de aniversario
 - html e css simples para poder criar uma interface simples - css posso criar com IA
 - js ou python para criar o raciocinio
 
 objetivo:
+
 - input com a data de nascimento, ex: 19/05/2004
 - ele separa os numeros um a um, ex: 1, 9, 0, 5, 2, 0, 0, 4
 - soma todos os números, ex: nessa conta deu 21
