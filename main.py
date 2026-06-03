@@ -53,7 +53,7 @@ def home():
 
         soma_reduzida = soma
 
-        while soma_reduzida >= 21:
+        while soma_reduzida >= 10:
 
             soma_reduzida = sum(
                 int(numero)
