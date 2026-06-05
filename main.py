@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 
 arcanos = {
-    0: "O Louco",
     1: "O Mago",
     2: "A Sacerdotisa",
     3: "A Imperatriz",
@@ -12,10 +11,10 @@ arcanos = {
     5: "O Hierofante",
     6: "Os Enamorados",
     7: "O Carro",
-    8: "A Justiça",
+    8: "A Força",
     9: "O Eremita",
     10: "A Roda da Fortuna",
-    11: "A Força",
+    11: "A Justiça",
     12: "O Enforcado",
     13: "A Morte",
     14: "A Temperança",
