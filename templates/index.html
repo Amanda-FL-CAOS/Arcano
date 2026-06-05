@@ -15,6 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/static/img/outros/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -22,6 +24,7 @@
     <!-- navbar -->
     <nav>
 
+        <img src="/static/img/outros/logo.png" alt="Logo do Arcano" class="logo">
         <h1>Arcano</h1>
 
         <h2>
@@ -67,29 +70,31 @@
 
         <!-- resultado -->
         {% if resultado %}
-
+        <h2>Resultado</h2>
+        <p>
+            Soma Total:
+            {{ resultado.soma }}
+        </p>
+        <div class="box">
+        {% if resultado.arcano_principal%}
         <div class="resultado">
-
-            <h2>Resultado</h2>
-
-            <p>
-                Soma Total:
-                {{ resultado.soma }}
-            </p>
-
             <p>
                 Arcano Principal:
                 {{ resultado.arcano_principal }}
             </p>
-
+            <img class= "card" src="{{ url_for('static', filename='img/cartas/' + resultado.soma|string + '.png') }}">
+        </div>
+        {% endif %}
+        <div class="resultado"> 
             <p>
                 Arcano Reduzido:
                 {{ resultado.arcano_reduzido }}
                 ({{ resultado.numero_reduzido }})
             </p>
+            <img class="card" src="{{ url_for('static', filename='img/cartas/' + resultado.numero_reduzido|string + '.png') }}">
 
         </div>
-
+        </div>
         {% endif %}
 
         <!-- explicação -->

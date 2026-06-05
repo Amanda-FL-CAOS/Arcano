@@ -63,12 +63,13 @@ def home():
                     for numero in str(soma_reduzida)
                 )
 
+            arcano_principal = arcanos.get(soma)
             resultado = {
                 "soma": soma,
-                "arcano_principal": arcanos.get(soma, "Não encontrado"),
-                "arcano_reduzido": arcanos.get(soma_reduzida, "Não encontrado"),
+                "arcano_principal": arcano_principal,
+                "arcano_reduzido": arcanos.get(soma_reduzida),
                 "numero_reduzido": soma_reduzida
-        }
+            }
 
     return render_template(
         "index.html",
