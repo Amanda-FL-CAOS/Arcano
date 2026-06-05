@@ -19,8 +19,7 @@
     <link rel="icon" href="/static/img/outros/logo.png" type="image/x-icon">
 </head>
 
-<body>
-
+<body>  
     <!-- navbar -->
     <nav>
 
@@ -70,17 +69,20 @@
 
         <!-- resultado -->
         {% if resultado %}
-        <h2>Resultado</h2>
-        <p>
+        <div class="resultado-container">
+        <h2 class="resultado-titulo">Resultado</h2>
+        <p class= "soma">
             Soma Total:
             {{ resultado.soma }}
         </p>
+        </div>
         <div class="box">
         {% if resultado.arcano_principal%}
         <div class="resultado">
             <p>
                 Arcano Principal:
                 {{ resultado.arcano_principal }}
+                ({{ resultado.soma }})
             </p>
             <img class= "card" src="{{ url_for('static', filename='img/cartas/' + resultado.soma|string + '.png') }}">
         </div>
