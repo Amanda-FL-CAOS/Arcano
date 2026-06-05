@@ -34,7 +34,7 @@
     <section>
 
         <!-- formulário -->
-        <form method="POST">
+        <form novalidate method="POST">
 
             <label for="birthdate">
                 Coloque aqui sua data de nascimento:
@@ -43,8 +43,11 @@
             <input
                 type="date"
                 id="birthdate"
-                name="birthdate"
-                required>
+                name="birthdate">
+
+                {%if erro%}
+                <p class= "erro">{{erro}}</p>
+                {%endif%}
 
             <button type="submit" class="magic-button">
                 <svg viewBox="0 0 96 96" fill="none">

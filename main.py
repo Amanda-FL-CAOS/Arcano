@@ -31,44 +31,49 @@ arcanos = {
 def home():
 
     resultado = None
-
+    erro = None
 
     if request.method == "POST":
 
 
         data = request.form["birthdate"]
 
+        if not data:
+            erro = "Coloque sua data de nascimento ✨"
 
-        numeros = []
+        else:
 
-        for caractere in data:
+            numeros = []
 
-            if caractere.isdigit():
-                numeros.append(int(caractere))
+            for caractere in data:
+
+                if caractere.isdigit():
+                    numeros.append(int(caractere))
 
 
-        soma = sum(numeros)
+            soma = sum(numeros)
 
 
-        soma_reduzida = soma
+            soma_reduzida = soma
 
-        while soma_reduzida >= 10:
+            while soma_reduzida >= 10:
 
-            soma_reduzida = sum(
-                int(numero)
-                for numero in str(soma_reduzida)
-            )
+                soma_reduzida = sum(
+                    int(numero)
+                    for numero in str(soma_reduzida)
+                )
 
-        resultado = {
-            "soma": soma,
-            "arcano_principal": arcanos.get(soma, "Não encontrado"),
-            "arcano_reduzido": arcanos.get(soma_reduzida, "Não encontrado"),
-            "numero_reduzido": soma_reduzida
+            resultado = {
+                "soma": soma,
+                "arcano_principal": arcanos.get(soma, "Não encontrado"),
+                "arcano_reduzido": arcanos.get(soma_reduzida, "Não encontrado"),
+                "numero_reduzido": soma_reduzida
         }
 
     return render_template(
         "index.html",
-        resultado=resultado
+        resultado=resultado,
+        erro=erro
     )
 
 app.run(debug=True)

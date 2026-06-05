@@ -262,3 +262,9 @@ p {
 
     line-height: 1.6;
 }
+
+.erro{
+    color: #f2c14e;
+    text-align: center;
+    font-size: 0.9rem;
+}
