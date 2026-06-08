@@ -1,6 +1,2 @@
 Flask
-<<<<<<< HEAD
 gunicorn
-=======
-gunicorn
->>>>>>> eabf0e7 (feat: add requeriments.txt file)
