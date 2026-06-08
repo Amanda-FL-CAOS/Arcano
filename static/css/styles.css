@@ -32,31 +32,63 @@ body {
 
     min-height: 100vh;
 }
-
 nav {
-    background-color: var(--nav-background);
+    position: fixed;
 
-    padding: 2rem;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    border-bottom: 2px solid var(--highlight);
-    border-radius: 0 0 18px 18px;
+    gap: 0.8rem;
+
+    width: fit-content;
+
+    background: rgba(21, 26, 59, 0.78);
+
+    padding: 0.7rem 1.2rem;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 999px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 4px 18px rgba(0,0,0,0.28),
+        0 0 12px rgba(108, 74, 182, 0.12);
+
+    z-index: 1000;
 }
 
 .logo{
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
+
+    position: static;
+
+    transform: none;
+
+    object-fit: contain;
+
+    z-index: 1001;
 }
 
 h1,
 h2 {
     color: var(--highlight);
+    pointer-events: none;
 }
 
 h1{
 
-    font-size: 4rem;
+    font-size: 2rem;
+
+    line-height: 1;
 
     color: #F2C14E;
 
@@ -82,14 +114,6 @@ h1{
     }
 }
 
-nav h2 {
-
-    margin-top: 0.5rem;
-
-    font-size: 1rem;
-
-    color: var(--text-secondary);
-}
 
 section {
 
@@ -99,7 +123,7 @@ section {
 
     gap: 3rem;
 
-    padding: 3rem 1rem;
+    padding: 7rem 1rem;
 }
 
 form {
@@ -268,51 +292,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         background-position 1s;
 }
 
-.magic-button svg {
 
-    position: absolute;
-
-    width: 18px;
-
-    aspect-ratio: 1;
-
-    z-index: 3;
-
-    transform: scale(0);
-
-    fill: var(--highlight);
-}
-
-.magic-button svg:nth-of-type(1) {
-    top: 20%;
-    left: 10%;
-}
-
-.magic-button svg:nth-of-type(2) {
-    top: 70%;
-    left: 30%;
-}
-
-.magic-button svg:nth-of-type(3) {
-    top: 30%;
-    left: 85%;
-}
-
-.magic-button:hover svg {
-
-    animation: sparkle 0.8s infinite;
-}
-
-@keyframes sparkle {
-
-    50% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(0);
-    }
-}
 
 .box {
 
@@ -416,6 +396,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     max-width: 700px;
 
     text-align: center;
+    pointer-events: none;
 }
 
 .sobre h3 {
