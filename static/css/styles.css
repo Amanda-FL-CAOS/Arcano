@@ -41,6 +41,7 @@ nav {
     text-align: center;
 
     border-bottom: 2px solid var(--highlight);
+    border-radius: 0 0 18px 18px;
 }
 
 .logo{
